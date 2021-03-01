@@ -1,0 +1,368 @@
+<html>
+  <head>
+    <style>
+      .game {
+        position: relative;
+        margin: 16px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 1px solid #aaa;
+        border-left: 1px solid #aaa;
+      }
+      .game-cell {
+        width: 45px;
+        height: 45px;
+        position: relative;
+        border-bottom: 1px solid #aaa;
+        border-right: 1px solid #aaa;
+      }
+      .game-point {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .game-point.black {
+        background-color: #333;
+        border: 1px solid #333;
+        cursor: default;
+      }
+      .game-point.white {
+        background-color: #fff;
+        border: 2px solid #333;
+        cursor: default;
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="game" style="width: 451px;">
+        <div class="game-cell">
+          <div class="game-point" data-value="0"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="1"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="2"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="3"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="4"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="5"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="6"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="7"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="8"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="9"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="10"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="11"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="12"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="13"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="14"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="15"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="16"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="17"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="18"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="19"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="20"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="21"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="22"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="23"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="24"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="25"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="26"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="27"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="28"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="29"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="30"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="31"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="32"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="33"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="34"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="35"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="36"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="37"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="38"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="39"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="40"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="41"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="42"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="43"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="44"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="45"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="46"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="47"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="48"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="49"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="50"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="51"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="52"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="53"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="54"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="55"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="56"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="57"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="58"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="59"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="60"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="61"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="62"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="63"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="64"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="65"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="66"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="67"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="68"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="69"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="70"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="71"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="72"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="73"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="74"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="75"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="76"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="77"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="78"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="79"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="80"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="81"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="82"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="83"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="84"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="85"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="86"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="87"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="88"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="89"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="90"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="91"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="92"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="93"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="94"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="95"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="96"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="97"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="98"></div>
+        </div>
+        <div class="game-cell">
+          <div class="game-point" data-value="99"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function action(list, index) {
+        return new Promise(function(resolve, reject) {
+          setTimeout(function() {
+            resolve(list[index]);
+          }, 1000);
+        });
+      }
+      async function main() {
+        const player = ['black', 'white'];
+        const list = [44, 45, 54, 34, 56, 33, 35, 26, 53, 55, 62, 71, 65, 25, 47, 74, 64, 63, 38, 29, 42, 52, 31, 43, 20];
+        for (let i = 0; i < list.length; i ++) {
+          const p = await action(list, i);
+          const current = player[i % 2];
+          document.querySelector(`[data-value="${p}"]`).classList.add(current);
+        }
+      }
+      main();
+    </script>
+  </body>
+</html>
