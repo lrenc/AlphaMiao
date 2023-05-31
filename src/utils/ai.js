@@ -8,7 +8,8 @@ import { SIZE } from './constants';
 
 export default class AI {
   constructor() {
-    this.playoutCount = 900;
+    this.name = 'AI';
+    this.playoutCount = 1000;
     this.isSelfplay = false;
   }
 

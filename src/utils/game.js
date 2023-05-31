@@ -28,7 +28,7 @@ export default class Game {
       let move = await player.getAction(this);
       this.action(move);
       if (visible) {
-        event.dispatch('play');
+        event.dispatch('play', player);
       }
       let [ end, winner ] = this.isEnd();
       if (end && visible) {

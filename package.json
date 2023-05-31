@@ -14,8 +14,8 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "start": "react-scripts start && cp -r models public/",
-    "build": "react-scripts build && cp -r models build/",
+    "start": "cp -r models/data-model public/ && react-scripts start",
+    "build": "cp -r models/data-model public/ && react-scripts build",
     "eject": "react-scripts eject",
     "test": "babel-node src/test.js",
     "train": "babel-node src/train.js"

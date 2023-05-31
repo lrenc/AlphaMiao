@@ -3,6 +3,9 @@ import lodash from 'lodash';
 import event from './event';
 
 export default class Human {
+  constructor() {
+    this.name = 'HUMAN';
+  }
   setValue(value) {
     this.value = value;
   }

@@ -7,7 +7,8 @@ export default class Neuro {
   }
 
   async initModel() {
-    const file = 'models/data-model/model.json';
+    const file = 'data-model/model.json';
+    console.log(process.env.PUBLIC_URL);
     if (process.env.NODE_ENV !== 'production') {
       this.path = `${window.location.origin}/${file}`;
     } else {

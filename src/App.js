@@ -14,11 +14,14 @@ class App extends React.Component {
     this.game = new Game();
     this.state = {
       board: this.game.board,
-      overlay: true
+      overlay: true,
+      loading: false
     };
-    listen('play', () => {
+    listen('play', (player) => {
+      const loading = player.name === 'HUMAN' ? true : false;
       this.setState({
-        board: this.game.board
+        board: this.game.board,
+        loading,
       });
     });
 
@@ -35,6 +38,11 @@ class App extends React.Component {
     });
     let human = new Human();
     let ai = new AI();
+    if (value === 1) {
+      this.setState({
+        loading: true
+      });
+    }
     await ai.init();
     this.game.start([human, ai], value);
   }
@@ -49,11 +57,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { board, overlay } = this.state;
+    const { board, overlay, loading } = this.state;
     return (
       <>
-        <p style={{textAlign: 'center'}}>AI每次落子前都会执行一定量的运算，请耐心等候。</p>
-        <p style={{textAlign: 'center'}}>当前AI棋力仅为自我对局2000局左右，任有很大的提升空间。</p>
+        <p style={{textAlign: 'center'}}>AI每次落子前都会执行一定量的运算，请耐心等候8 ~ 10s。</p>
+        <p style={{textAlign: 'center'}}>当前AI棋力仅为自我对局2000局左右，仍有很大的提升空间。</p>
         <div
           className="game"
           style={{width: SIZE * 45 + 1}}
@@ -73,6 +81,12 @@ class App extends React.Component {
               />
             </div>
           ))}
+          <div
+            className="loading"
+            style={{ display: loading ? 'flex' : 'none' }}
+          >
+            <span>loading...</span>
+          </div>
           <div
             className="overlay"
             style={{display: overlay ? 'flex' : 'none'}}

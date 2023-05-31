@@ -61,3 +61,18 @@
   color: #fff;
   cursor: pointer;
 }
+
+.loading {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
